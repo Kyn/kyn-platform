@@ -3,7 +3,7 @@ title: The Kyn Project
 email: hello@kyn.me
 description: > # this means to ignore newlines until "baseurl:"
   Find charities you love by following philanthropists you respect
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/kyn-platform" # the subpath of your site, e.g. /blog/
 url: "kyn.me" # the base hostname & protocol for your site
 twitter_username: findkyn
 github_username:  kyn
