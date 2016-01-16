@@ -1,0 +1,247 @@
+.confirmations-wrapper {
+  .wizard-wrapper-inner {
+    height: 500px;
+    padding: 25px 0;
+    position: relative;
+  }
+  .wizard-step, .well-wizard-two, .well-wizard-three {
+    display: none;
+  }
+  .wizard-buttons {
+    position: absolute;
+    bottom: 100px;
+    right: 25px;
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      margin-top: 20px;
+      bottom: auto;
+      right: auto;
+    }
+  }
+  .welcome-wrapper {
+    display: none;
+  }
+  .input-group-addon {
+    background-color: $gray-kyn-light;
+    color: white;
+    border: none;
+  }
+  .eachgrant-inner-container > .well {
+    margin-bottom: 0px;
+  }
+  .help-block {
+    font-size: .8em;
+    color: $gray-kyn-light;
+    a {
+      color: $gray-kyn;
+    }
+  }
+  //Preview
+  #confirmationsPreview {
+    .eachgrant {
+      margin-bottom: 5px;
+    }
+  }
+  //quotes modal
+  #confirmation-quotes {
+    font-size: 1.1em;
+  }
+  .carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width: 70%;
+    margin: 0 auto;
+    border: none;
+    .well {
+      border: none;
+    }
+  }
+  .carousel-indicators {
+    display: none;
+  }
+  .carousel-control {
+    background-image: none;
+    top: 50%;
+    color: $gray-kyn-light;
+  }
+  .modal-footer {
+    padding: 5px;
+    //border-top: none;
+    .close {
+      margin-bottom: 5px;
+    }
+  }
+
+//
+//Old CSS
+//
+  .landing-wrapper {
+    color: $gray-kyn-dark;
+  }
+  .landing-two, .landing-three, .landing-four, .landing-five {
+    display: none;
+  }
+  .landing-text {
+    &:after {
+      content: 'at right';
+      @media (max-width: $screen-xs-max) {
+        content: 'below';
+      }
+    }
+  }
+  .vertical-center {
+    @include vertical-align;
+  }
+  .stepwizard-wrapper {
+    margin:0 -20px;
+    padding-left: 20px;
+    background-color: $gray-kyn;
+    padding: 5px;
+    &.success {
+      background-color: $alert-success-bg;
+      .stepwizard-intro-text {
+        color: $alert-success-text;
+      }
+    }
+  }
+  .stepwizard-step p {
+    margin-top: 10px;
+  }
+
+  .stepwizard-row {
+      display: table-row;
+  }
+
+  .stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+  }
+  .stepwizard-intro-text {
+    color: $gray-kyn-light;
+  }
+
+  .stepwizard-step button[disabled] {
+      opacity: 1 !important;
+      filter: alpha(opacity=100) !important;
+  }
+
+  a.btn-circle[disabled] {
+    background-color: $gray-kyn-light !important;
+    border: none;
+  }
+
+  .stepwizard-row:before {
+      top: 14px;
+      bottom: 0;
+      position: absolute;
+      content: " ";
+      width: 100%;
+      height: 1px;
+      //background-color: #ccc;
+      background-color: lighten($gray-kyn, 5%);
+      z-order: 0;
+
+  }
+
+  .stepwizard-step {
+      display: table-cell;
+      text-align: center;
+      position: relative;
+  }
+
+  .btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+    cursor: default;
+  }
+  .well-confirmations {
+    min-height:500px;
+    position:relative;
+    padding-top:0px;
+  }
+  .well-confirmations-short {
+    min-height:385px;
+    position:relative;
+  }
+  .confirmations-form {
+    .confirmation-count {
+      margin-top: 20px;
+      color: #aaa;
+    }
+    .help-block {
+      font-style: italic;
+      color: #aaa;
+      font-size: 85%;
+      margin-bottom: 60px;
+    }
+  }
+  .confirmation-buttons {
+    position: absolute;
+    bottom: 40px;
+    right: 20px;
+  }
+  .confirm-welcome-button-wrapper {
+    @include vertical-align();
+  }
+  .btn-confirm-welcome {
+
+  }
+  #confirmation-quotes {
+    font-family: "Helvetica Neue";
+    .eachgrant-testimonial {
+      font-size: 0.9em;
+    }
+    .eachgrant-grantmaker-avatar {
+      padding-right:5px;
+    }
+    .well {
+      min-height: 185px;
+    }
+    .carousel-indicators li {
+      border: 1px solid darken(#e3e3e3, 5%);
+      &.active {
+        background-color: darken(#e3e3e3, 5%);
+      }
+    }
+  }
+  .well-text {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    //background-color: $gray-kyn-light;
+    color: #aaa;
+    left: 0;
+    padding: 5px 10px;
+    width: 100%;
+    border-top: 1px solid #eee;
+  }
+  label {
+    margin-top: 20px;
+  }
+  label.radio-inline {
+    margin-top: 0px;
+  }
+  .confirm-input {
+    display: inline;
+    padding: 3px;
+    border: 1px solid #eee;
+  }
+  .confirm-defocus {
+    margin-left: 5px
+  }
+  .confirmation-success-ctas {
+    margin-top: 100px;
+  }
+  .btn-halfish-block {
+    @media (max-width: $screen-sm-max) {
+      width:100%;
+      //margin-bottom: 10px;
+    }
+  }
+}

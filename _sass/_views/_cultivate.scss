@@ -1,0 +1,10 @@
+.cultivate-welcome-bg {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url('#{$cloudfrontPath}/images/cultivate.jpg');
+  background-size: cover;
+  background-position: center center;
+}

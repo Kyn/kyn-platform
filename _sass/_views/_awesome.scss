@@ -1,0 +1,345 @@
+#series-awesome {
+
+  //Remove awkward focus border in Chrome
+  *:focus {
+      outline: 0;
+  }
+
+  ul {
+    margin: 0 0;
+  }
+
+  a {
+    //color: $text-color;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .well-10speak {
+    background-image: url('#{$cloudfrontPath}/images/bg-10speak.png');
+  }
+  .well-radial-gradient {
+    //@include background-image(radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%));
+    //margin-bottom: 20px;
+  }
+
+  .awesome-bg {
+    background: url('#{$cloudfrontPath}/images/3px-tile.png');
+  }
+
+  .awesome-hero-bg {
+    background: url('#{$cloudfrontPath}/images/social-network-650w.jpg'); //IE Backup
+    //@include background(
+      //linear-gradient(to right, rgba(0,0,0, .8) 0%, rgba(0,0,0, 0.3) 25%, rgba(0,0,0, 0.1) 50%, rgba(0,0,0, 0.3) 75%, rgba(0,0,0, 0.8) 100%),
+      //url('#{$cloudfrontPath}/images/social-network-650w.jpg')
+      //repeat
+      //top left
+      //fixed);
+    background-size: 100%, 35%;
+  }
+
+  .awesome-hero {
+    padding: 125px 0px;
+    height: 350px;
+    margin-bottom: 0;
+    background: transparent; //for jumbotron
+    p {
+      line-height: 1.5em;
+      background-color: rgba(0,0,0,0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  }
+
+  #awesome-intro {
+    padding: 0 20px;
+  }
+
+  #awesome-intro div.row:first-child {
+
+  }
+
+  #awesome-intro .row:last-child {
+    //margin-bottom: 100px;
+  }
+
+  #awesome-intro-summary i {
+    opacity: .5;
+  }
+
+  #awesome-intro-detail-text {
+    .image-overlay-text {
+      background-color: rgba(0,0,0,0.7);
+      color: white;
+      padding: 10px;
+    }
+  }
+
+  #awesome-kyn-herring { //figure out the reference, win a prize
+    color: $gray-kyn;
+    padding: 30px 0 50px;
+    overflow: hidden;
+  }
+
+  #awesome-summary {
+    padding: 0 0 80px 0;
+  }
+
+  #awesome-detail {
+    //padding: 30px 0 0 0;
+  }
+
+  #awesome-mission {
+    padding: 50px 0;
+    /* Background pattern from subtlepatterns.com */
+    background-image: url('#{$cloudfrontPath}/images/bg-lodyas.png');
+    .awb-img {
+      width: 100%;
+      height: 100%
+    }
+    .awb-text {
+      margin: 55px 75px 75px 75px;
+    }
+    a {
+      color: $gray-kyn-dark-text;
+      text-decoration: none;
+      &:hover {
+        color: lighten($gray-kyn-dark-text, 15%);
+      }
+    }
+    a.awb-grant-link {
+      color: $gray-kyn-light;
+      text-decoration: none;
+      &:hover {
+        color: lighten($gray-kyn-light, 15%);
+      }
+    }
+  }
+
+
+
+  .logo-text-match {
+    vertical-align: middle;
+    //match image - feels hacky
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .label-kyn {
+    padding: .2em .6em .2em;
+    background-color: $gray-kyn;
+    margin-bottom: 5px;
+  }
+
+  #awesome-panels {
+    padding: 80px 0 40px 0;
+  }
+
+  #awesome-intro-detail-text p {
+    font-size: 16px;
+  }
+
+  .well-white {
+    background-color: white;
+  }
+
+  .well-intro {
+    padding: 20px;
+  }
+
+  .panel-primary {
+    -moz-box-shadow:    0px 0px 25px 0px #000;
+    -webkit-box-shadow: 0px 0px 25px 0px #000;
+    box-shadow:         0px 0px 25px 0px #000;
+  }
+
+  #thanks {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  .lead { font-size: 33px;margin-bottom:0px;
+  }
+
+  a.payment-options {
+    text-decoration: none !important;
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+  ul.payment-options-friends li {
+    margin: 10px;
+  }
+
+  ul.alt-payment-buttons {
+    padding: 10px 0 25px 0;
+    li.dwolla {
+      //Damn iframes. TODO: fix hack
+      position: relative;
+      top: -6px;
+    }
+  }
+
+  .btn-friend {
+    width: 50px;
+  }
+
+  .btn-stellar {
+    background-color: #09b5e5;
+  }
+
+  .story-link {
+    font-size: 1.3em;
+    text-decoration: none;
+    color: $gray-light;
+    margin-right: 10px;
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  @media (max-width: $screen-xs-max) {
+    #awesome-intro {
+      padding: 0;
+    }
+    .rs-remaining-goal {
+      margin-top: 50px;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    .awb-text {
+      margin: 10px !important;
+      text-align: center;
+    }
+    .awb-img {
+      margin-bottom: 20px
+    }
+  }
+  @media (max-width: $screen-md-max) {
+    .awb-img {
+      width: 60% !important;
+      height: 60% !important;
+    }
+  }
+  ///
+  ///Quotes Carousel
+  ///
+  #awesome-quote {
+    //@include background-image(radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.1) 100%));
+    margin-bottom: 20px;
+  }
+  #quote-carousel
+  {
+    padding: 0 10px 30px 10px;
+    margin-top: 30px; //original
+  }
+
+  /* Control buttons  */
+  #quote-carousel .carousel-control
+  {
+    background: none;
+    color: #222;
+    font-size: 2.3em;
+    text-shadow: none;
+    margin-top: 30px;
+  }
+  /* Previous button  */
+  #quote-carousel .carousel-control.left
+  {
+    left: -12px;
+  }
+  /* Next button  */
+  #quote-carousel .carousel-control.right
+  {
+    right: -12px !important;
+  }
+  /* Changes the position of the indicators */
+  #quote-carousel .carousel-indicators
+  {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+  }
+  /* Changes the color of the indicators */
+  #quote-carousel .carousel-indicators li
+  {
+    background: #c0c0c0;
+  }
+  #quote-carousel .carousel-indicators .active
+  {
+    background: #333333;
+  }
+  #quote-carousel img
+  {
+    width: 250px;
+    height: 100px
+  }
+  /* End carousel */
+
+  .item blockquote {
+      border-left: none;
+      margin: 0;
+  }
+
+  .item blockquote img {
+      margin-bottom: 10px;
+  }
+
+  .item blockquote p:before {
+      content: "\f10d";
+      font-family: 'Fontawesome';
+      float: left;
+      margin-right: 10px;
+  }
+  blockquote p:after {
+    content: "\f10e";
+    font-family: 'Fontawesome';
+    float: right;
+    margin-left: 10px;
+  }
+
+  /**
+    MEDIA QUERIES
+  */
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+      #quote-carousel
+      {
+        margin-bottom: 0; //original
+        padding: 0 40px 30px 40px; //original
+        padding: 0 40px 10px 40px;
+        margin-top: 80px;
+        margin-bottom:80px;
+      }
+
+  }
+
+  /* Small devices (tablets, up to 768px) */
+  @media (max-width: 768px) {
+
+      /* Make the indicators larger for easier clicking with fingers/thumb on mobile */
+
+      #quote-carousel .carousel-indicators {
+          bottom: -20px !important;
+      }
+      #quote-carousel .carousel-indicators li {
+          display: inline-block;
+          margin: 0px 5px;
+          width: 15px;
+          height: 15px;
+      }
+      #quote-carousel .carousel-indicators li.active {
+          margin: 0px 5px;
+          width: 20px;
+          height: 20px;
+      }
+  }
+
+
+} //Close tag for #awesome css wrapper

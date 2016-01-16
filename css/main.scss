@@ -1,0 +1,2350 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import "bootstrap-variables";
+@import "bootstrap";
+
+///
+/// Define Global Sass Variables & Mixins
+///
+$s3Path : "//s3.amazonaws.com/kyn-production";
+$cloudfrontPath : "//d2zrr75qo845hh.cloudfront.net";
+
+@mixin kyn-box-shadow {
+  box-shadow: 0px 0px 10px #888;
+  -moz-box-shadow: 0px 0px 10px #888;
+  -webkit-box-shadow: 0px 0px 10px #888;
+  filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
+}
+@mixin kyn-box-shadow-light {
+  box-shadow: 0px 0px 10px #bbb;
+  -moz-box-shadow: 0px 0px 10px #bbb;
+  -webkit-box-shadow: 0px 0px 10px #bbb;
+  filter:progid:DXImageTransform.Microsoft.Shadow(Color=#bbbbbb, Strength=5, Direction=0),progid:DXImageTransform.Microsoft.Shadow(Color=#bbbbbb, Strength=5, Direction=90),progid:DXImageTransform.Microsoft.Shadow(Color=#bbbbbb, Strength=5, Direction=180),progid:DXImageTransform.Microsoft.Shadow(Color=#bbbbbb, Strength=5, Direction=270);
+}
+
+@mixin border-white-bg {
+  border: 2px solid #e9e9e9 !important;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.vertical-align {
+  @include vertical-align;
+}
+
+//F-you Microsoft...seriously
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+//Define header nav height
+$navHeaderHeight: 70px;
+
+//Define Discover Page card height
+$cardHeight: 500px;
+
+//Define Activity Page card height
+$eachgrantWidth: 400px;
+$eachgrantHeight: 500px;
+
+/// End Variables & Mixins
+
+///
+/// Kyn views
+///
+@import "_views/buttons-and-indicators";
+@import "_views/home";
+@import "_views/admin";
+@import "_views/story";
+@import "_views/stripe";
+@import "_views/invites";
+@import "_views/awesome";
+@import "_views/profile";
+@import "_views/preview";
+@import "_views/dispatch";
+@import "_views/coinvest";
+@import "_views/upcoming";
+@import "_views/concierge";
+@import "_views/cultivate";
+@import "_views/grantmakers";
+@import "_views/confirmations";
+@import "_views/opportunities";
+@import "_views/smartergiving";
+@import "_plugins/sweetalert";
+@import "_plugins/discover-card-flip";
+
+// Sitewide customized styles defined below
+
+//2015 Updates
+.font-light {
+  font-weight: 100;
+}
+h1.section-header {
+  font-weight: 100;
+  margin-top: 60px;
+}
+.upcoming-current-box {
+  padding-left: 0 !important;
+  img {
+    width: 100%;
+  }
+}
+// Define view-specific styles in /views/nameOfTemplate.scss
+
+.flash-wrapper {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 50%;
+  z-index: 1000;
+  text-align: center;
+  left: 25%;
+  //opacity: 0.8;
+  .alert {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    @include kyn-box-shadow-light;
+  }
+}
+
+.container-fluid-no-padding-all-sizes, .col-no-padding-all-sizes {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.alert-tour {
+  background-color: $gray-kyn-dark;
+  color: $gray-kyn-light;
+  a {
+    color: $gray-kyn-light;
+  }
+  button.close {
+    color: $gray-kyn-light;
+  }
+}
+
+//TODO: Find these orphans a home...place them with their relatives
+.display-none {
+  display: none !important;
+}
+.well-border {
+  @include border-white-bg;
+}
+.well-padding {
+  padding: 19px;
+}
+.well-no-padding {
+  padding: 0 !important;
+}
+
+.badge-rose {
+  background-color: #f15755;
+}
+
+.kyn-logo-lato {
+  font-family:'Lato';
+  font-weight:900;
+  font-size:1.2em;
+  display: inline;
+  .kyn-logo-brand {
+    color: $gray-kyn-light;
+  }
+}
+.kyn-logo-text-white {
+  .gray-kyn {
+    color: white !important;
+  }
+}
+.kyn-logo-34 {
+  .gray-kyn {
+    font-size: 34px !important;
+  }
+}
+
+.hr-gray-bg {
+  border-top: 1px solid #ddd;
+}
+
+.img-polaroid, .img-circle-border {
+  border: 1px solid #eee;
+  box-shadow: none;
+}
+
+.visible {
+  visibility: visible !important;
+}
+
+.lead-before-small-text {
+  margin-bottom: 5px;
+}
+
+.profile-logo-img {
+  width: 200px;
+}
+
+.list-header {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 65%;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  color: #bbb !important;
+}
+
+.tooltip-inner {
+  min-width: 200px;
+}
+
+.label-gray-kyn {
+  padding: .2em .6em .2em;
+  background-color: $gray-kyn;
+  margin-bottom: 5px;
+}
+
+.badge-danger {
+  background-color: $red;
+}
+
+// Kyn image logo next to text (e.g. kyn.Dispatch)
+.logo-subbrand {
+  font-weight: bold;
+  content: "kyn";
+  &:after {
+    content: ".";
+    color: $red;
+  }
+}
+.brand-images-welcome {
+  width: 200px;
+}
+
+.kyn-brand {
+  position: relative;
+  &.kyn-brand-platform {
+    width: 40px;
+    margin-left: 2px;
+    vertical-align: bottom;
+  }
+  &.kyn-brand-page-header {
+    width: 55px;
+    vertical-align: text-top;
+  }
+}
+
+#iron-router-progress {
+    background-color : $blue;
+    box-shadow       : 0 0 5px $blue;
+}
+
+#iron-router-progress.spinner:before {
+    border-color : $blue;
+}
+
+.logo-align-h3 {
+  vertical-align: middle;
+}
+
+.form-on-light-bg {
+  input[type="email"], input[type="text"], .input-group-addon {
+  background-color: $input-bg !important;
+  border: 1px solid #eee !important;
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075) !important);
+  @include transition(border linear .2s, box-shadow linear .2s !important);
+  }
+  input[type="submit"] {
+    border-top: 1px solid $red !important;
+    border-bottom: 1px solid $red !important;
+  }
+}
+
+// Begin Body Classes
+
+* {
+    margin: 0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background: url("#{$s3Path}/images/bg-10speak.png");
+}
+
+a.link-underline {
+  text-decoration: underline;
+  &:hover, &:focus {
+    text-decoration: none;
+  }
+}
+
+a.no-underline {
+  text-decoration: none !important;
+  &:hover, &:focus {
+    text-decoration: underline !important;
+  }
+}
+
+a.no-underline-hover {
+  text-decoration: none !important;
+  &:hover, &:focus {
+    text-decoration: none !important;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+a.btn {
+  text-decoration: none !important;
+  &:hover, &:focus {
+    text-decoration: none !important;
+  }
+}
+
+.small {
+  &.smaller {
+    font-size: 65%;
+    line-height: 1.3em;
+  }
+  &.smallest {
+    font-size: 50%;
+    line-height: 1.3em;
+  }
+}
+
+$footerHeight: 235px;
+
+#wrap {
+  //min-height: 100%;
+  height: auto !important;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  //margin: 0 auto -$footerHeight !important;
+  //margin-bottom: -$footerHeight !important;
+  //padding-bottom: 54px;
+}
+
+//Sticky footer if short page
+footer {
+  border-top: 1px solid darken($gray-kyn-black, 5%);
+  //position: absolute !important;
+  //bottom: 0;
+  //height: $footerHeight;
+  min-height: $footerHeight;
+  margin-top: -#{$footerHeight};
+  width: 100%;
+  clear: both;
+}
+.push {
+  padding-bottom: $footerHeight;
+}
+
+body {
+  .container, .container-fluid {
+    //max-width: 1320px; //Bit of a hack until Bootstrap 3.x upgrade
+    //margin: auto;
+  }
+}
+
+//Footer
+//TODO: The footer styling needs some serious refactoring
+footer {
+  position: relative;
+  background-color: $gray-kyn-black;
+  color: $white;
+  a.footer-logo {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    margin-left: 20px;
+    @media (max-width: $screen-xs-max) {
+      position: relative;
+      top: auto;
+      left: auto;
+      img {
+        margin: 20px 0;
+      }
+    }
+  }
+  ul.nav-stacked {
+    margin-top: 15px;
+  }
+  .nav > li > a {
+    color: $white;
+    &:hover {
+      color: $gray-kyn-light;
+    }
+  }
+  hr {
+    //border-bottom: 1px solid lighten($gray-kyn, 2%);
+    //border-top: 1px solid darken($gray-kyn, 5%);
+    border-top: 1px solid black;
+    border-bottom: 1px solid lighten($gray-kyn-dark, 2%);
+    margin-bottom: 0px;
+  }
+}
+footer.navbar {
+  margin-bottom: 0px !important;
+}
+
+.nav > li > a.disabled {
+  //color: #777;
+  //background-color: #839098;
+  color: white;
+  //border-radius: 5px;
+}
+
+.disabled-footer {
+  color: $gray-kyn-light !important;
+  cursor: default;
+  &:active, &:focus {
+    color: $gray-kyn-light !important;
+  }
+  &:hover {
+    cursor: default;
+  }
+  &:after {
+    color: $red;
+    margin-left: 10px;
+    padding: 3px;
+    font-family: "FontAwesome";
+    content: " \f177\ You are here";
+  }
+}
+
+
+.navbar-inner {
+  filter:none; // Damn you IE
+  //background: #2C3E50;
+  //background: $gray-kyn !important;
+  border: none;
+}
+//End Footer
+
+
+.tooltip-inner {
+  text-shadow: none; //override any text shadows e.g. from alert divs
+}
+
+.mce_inline_error {
+  @extend .alert;
+  @extend .alert-danger;
+}
+
+.mailchimp-light-background {
+  #mc_embed_signup {
+    input[type="email"] {
+    background-color: $input-bg !important;
+    border: 1px solid #e9e9e9 !important;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075) !important);
+    @include transition(border linear .2s, box-shadow linear .2s !important);
+    }
+    input[type="submit"] {
+      border-top: 1px solid $red !important;
+      //border-bottom: 1px solid $red !important;
+    }
+  }
+}
+
+// End Body Classes
+
+// Main Public Landing
+
+a:hover {
+  cursor: pointer;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder,  { // Poor browser support
+  opacity: 0;
+}
+
+textarea { // Damn you IE
+  overflow: auto;
+}
+
+
+.popover-nav {
+  color: $gray-dark !important;
+  h3 {
+    font-weight: bold;
+  }
+}
+
+.badge-success {
+  background-color: $green;
+}
+
+
+#main {
+  //margin-top: 40px;
+}
+
+#profile {
+  margin-bottom: 150px;
+  // min-height: 680px;
+}
+
+.top-buffer {
+  margin-top:20px !important;
+}
+///
+/// Navbar - Header
+///
+@media (min-width: $screen-md-min) {
+  #bs-navbar-collapse-header {
+    //display: none !important;
+  }
+}
+
+.header-brand img {
+  width: 125px;
+}
+.navbar-brand {
+  height: $navHeaderHeight;
+}
+.navbar-text {
+  float: left;
+}
+
+//Set hover and active states for main header
+.navbar {
+  .nav.navbar-inside-app>li.disabled {
+    a {
+      color: $text-color !important;
+      span {
+        padding-bottom: 3px;
+        border-bottom: 4px solid $gray-lighter !important;
+      }
+    }
+  }
+}
+
+.navbar-main {
+  line-height: $navHeaderHeight;
+  color: #777 !important;
+  font-weight: 200;
+}
+
+.navbar-contact {
+  li {
+    display: inline-block;
+  }
+}
+
+// Vertically center navbar
+.navbar .nav.navbar-inside-app > li > a {
+  //$elementHeight: 40px; // Use with small brand logog
+  $elementHeight: $navHeaderHeight;
+  padding: (($navbar-height - $elementHeight) / 2 - 1) 10px (($navbar-height - $elementHeight) / 2 + 1);
+  //line-height: 32px; // Use with small brand logo
+  line-height: $navHeaderHeight !important;
+  //color: #f6f6f6; // Use with navbar-inverse
+}
+
+.navbar-inverse .nav > li > a {
+  line-height: 55px;
+}
+
+li.nav-divider-vertical {
+  font-size: 1.3em;
+  font-weight: 100;
+  opacity: .9;
+  &:hover {
+    cursor: default;
+  }
+}
+
+.nav > li {
+  > a {
+      color: $gray-light;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $text-color;
+      background-color: transparent;
+    }
+  }
+  &.disabled > a {
+    &:hover, &:focus {
+      cursor: $nav-disabled-link-cursor;
+    }
+  }
+}
+
+footer .navbar-inverse .brand, .navbar-inverse .nav > li > a {
+  $elementHeight: 40px; // Use with small brand logog
+  padding: (($navbar-height - $elementHeight) / 2 - 1) 10px (($navbar-height - $elementHeight) / 2 + 1);
+  line-height: 55px !important; // Use with small brand logo
+  color: #f6f6f6; // Use with navbar-inverse
+}
+
+ul.navbar-footer-links li {
+  display: inline-block;
+}
+
+.image-credits {
+  width: 75px;
+  margin-right: 10px;
+}
+a.image-credits-link {
+  color: #839098 !important;
+  &:hover {
+    color: white;
+  }
+}
+
+.image-credit-links-separator {
+  margin: 0 20px;
+}
+
+.footer-link-headers {
+  text-transform: uppercase;
+  font-size: 80%;
+  font-weight: bold;
+  color: #839098 !important;
+  padding: 10px 15px;
+}
+
+.media-story {
+  margin-left: 50px;
+}
+
+.accordion-group-story, .accordion-inner-story {
+  border: none !important;
+}
+
+// This feels hackish TODO: Check for SASS mixin support
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: inline-block;
+  &.reco-sidebar {
+    max-width: 188px;
+  }
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.alert-attach {
+  margin-top: -40px; //This feels hackish. TODO: Cleanup alert-attach hack
+}
+
+.well {
+  &.well-white {
+    background-color: white;
+    color: inherit;
+  }
+  &.well-dark-blue {
+    background-color: $gray-kyn;
+    color: white;
+  }
+  &.welcome {
+    // background-color: $blue;
+    // color: white !important;
+  }
+  &.cheatsheet {
+    -webkit-box-shadow:0 1px 10px rgba(170,170,170,1.0);
+    -moz-box-shadow:0 1px 10px rgba(170,170,170,1.0);
+    box-shadow:0 1px 10px rgba(170,170,170,1.0);
+  }
+  &.thankYou {
+    background-color: $green;
+    color: white !important;
+  }
+  &.sidebar-org-right {
+    background-color: $gray-lighter;
+  }
+  &.kyrmaCTA {
+    background: $gray-lighter;
+    margin-left:1px;
+    position: relative;
+    top:40px;
+    box-shadow: none;
+  }
+  &.supportKyn {
+    background: $gray;
+    color: #fff;
+  }
+  &.findKyn {
+    background: $gray-lighter;
+    color: #fff;
+  }
+  &.support {
+    background-color: $gray-lighter;
+    color: $gray-dark;
+  }
+  &.review-confirmation-border {
+    -webkit-border-radius:0 0 6px 6px;
+    -moz-border-radius:0 0 6px 6px;
+    border-radius:0 0 6px 6px;
+  }
+}
+
+#support {
+  background-color: $green;
+    color: white !important;
+    margin-top: 150px;
+    width: 100%;
+    height: 200px;
+}
+
+// Prototype support footer
+
+#proto-reminder {
+  background-color: #1abc9c;
+  color: #fff;
+  text-align: center;
+  margin-top: 150px;
+  width: 100%;
+  padding: 5px;
+}
+
+.caption {
+  h4 {
+    padding: 15px 0px 10px 0px;
+  }
+
+  p.button {
+    padding-top: 15px;
+  }
+}
+
+.img-size-default {
+  width: 100px;
+  height: 100px;
+}
+
+.signupCopy {
+  font-size:24px;
+  padding-left:24px;
+}
+
+.contact-founder {
+  margin:25px 0px;
+  a {
+    color: #f15755;
+    &:hover {
+
+    }
+  }
+  a.phone:hover {
+      text-decoration: none;
+      cursor: default;
+    }
+}
+
+.proto-reminder {
+    background: #1abc9c;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.proto-contact {
+  color: #ffffff;
+  &.phone {
+    cursor: default;
+  }
+}
+
+.contribute-thumbnails {
+  ul {
+    list-style-type: none;
+  }
+  .thumbnail {
+    margin-top: 50px;
+    border:none;
+    box-shadow:none;
+  }
+}
+
+.get-started-thumbnails {
+  padding:10px;
+  ul {
+    list-style-type: none;
+  }
+  .thumbnail {
+    padding: 25px 15px 15px 15px;
+    border:none;
+    box-shadow:none;
+  }
+}
+
+// Review Confirmation Alert
+
+#confirmAlert {
+  padding: 25px 50px;
+  border-left: 10px solid $red;
+  -webkit-box-shadow: 0px 5px 20px 0px $gray-light;
+  -moz-box-shadow: 0px 5px 20px 0px $gray-light;
+  box-shadow: 0px 5px 20px 0px $gray-light;
+}
+
+.review-confirmation {
+  font-size: 18px;
+  padding-bottom: 0;
+  line-height: 16px; //TODO Fix this hack
+  &.spacing-top {
+    margin: 30px 30px 0 30px;
+  }
+  &.spacing-bottom {
+    margin: 20px 30px 0 30px;
+  }
+  .badge {
+    vertical-align: middle;
+  }
+}
+
+.review-confirmation-preview-outline {
+  outline-offset: 5px;
+  outline: 5px solid $blue;
+}
+
+.more-options-container {
+  margin-top: 36px;
+}
+
+
+
+.well-mailchimp {
+  @include border-white-bg;
+  border-top: none !important;
+  box-shadow: 0px -10px 0px gray;
+  position: relative;
+}
+
+.border-suppress {
+    border: none !important;
+  }
+
+.suppress-link {
+  font-size: 18px;
+  text-decoration: none !important;
+  color: #3a87ad;
+  &:hover {
+    text-decoration: none !important;
+    color: #3a87ad;
+  }
+}
+
+.radio input[type="radio"] {
+    margin-left: -19px !important; //TODO Fix this hack - radio buttons were being cut off by 1px
+  }
+
+
+// Chadkruse.com-style cards - Confirmed-getStarted
+
+#welcome {
+  font-family: "Open Sans", sans-serif;
+  //padding: 50px;
+  margin: 50px 0 75px 0;
+  //background: #cfd3d6;
+  //background-image: url("#{$s3Path}/images/landing-box-social-network-HL.jpg");
+  //background-image: url("#{$s3Path}/images/landing-box-social-network.jpg");
+  background-position: left top;
+  min-height: 200px;
+}
+
+#main-landing {
+  font-family: "Open Sans", sans-serif;
+  &.hero-unit {
+    h1 {
+      font-family: "Open Sans", sans-serif;
+      color: $text-color;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+// TODO - clean up main vs main-landing IDs ?WTF?
+
+#main {
+  h1, h2, h3, h4, h5 {
+  //font-family: "Open Sans", sans-serif;
+  }
+}
+
+.hero-unit {
+  color: $text-color;
+  img {
+ //width: 100%; height: auto;
+ width: 940px;
+ height: auto;
+}
+}
+
+/* line 17, ../../app/assets/stylesheets/welcome.css.scss */
+.splash-action {
+  float: right;
+}
+.splash-action, .hero-overlay {
+  padding: 10px;
+  color: white;
+  background: #303335;
+  background: rgba(137, 137, 137, 0.7);
+  border-radius: 4px;
+}
+
+.hero-unit h2, .hero-unit p {
+  padding: 8px 10px;
+}
+
+.hero-unit {
+        background-image: url(#{$s3Path}/images/landing-box-social-network.jpg);
+}
+
+#testimonials {
+  margin:50px 0;
+}
+
+// ******* Main Landing Boxes *********
+
+.btn-how-to:hover {
+      background-color: #f5f5f5;
+}
+  //set spacing for all boxes
+.container {
+  &.landing-boxes {
+    margin: 25px 0;
+    &.boxes-top {
+      margin: 50px 0 25px 0;
+    }
+    &.boxes-bottom {
+      margin: 25px 0 50px 0;
+    }
+  }
+}
+
+#how-to {
+  margin: 80px 0;
+  .get-started-button {
+    //background-color: $blue;
+    //color: #fff;
+    //border-radius: 5px;
+    //margin-top:80px; //use if nested under "Just Follow" explanation box
+    //margin-top:0px;
+    //Using btn class
+    padding: 20px 40px;
+  }
+  .how-to {
+    background-color: $white !important;
+    .badge-how-to {
+      margin-right:8px;
+      background-color: #eee;
+      float:left;
+      font-size:5em;
+      line-height:1em;
+    }
+    img.how-to {
+      margin-top: 15px;
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      box-shadow:0px 0px 10px #888;
+      -moz-box-shadow:0px 0px 10px #888;
+      -webkit-box-shadow:0px 0px 10px #888;
+      filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
+          //border: 1px solid black;
+    }
+  }
+}
+
+#landing-boxes-bottom-container {
+  //background-color: $blueDark;
+  background-color: #bbb;
+  color: white;
+  //margin-bottom: 150px;
+}
+
+#experts, .main-landing-wells {
+  //background-color: $red;
+  //color: white;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  img.experts {
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+    }
+}
+
+img.noun-project-icons {
+  opacity: .2;
+}
+
+#the-pros {
+  //background-color: $green;
+  //color: white;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  img {
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      &.the-pros-logo {
+        margin-top: 15px;
+      }
+    }
+}
+
+#community {
+  //background-color: $blue;
+  //color: white;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  img {
+      -webkit-border-radius:3px;
+      -moz-border-radius:3px;
+      border-radius:3px;
+      &.community-logo {
+        margin-top: 15px;
+      }
+    }
+}
+
+#news {
+  margin: 50px 0;
+}
+
+#navdiv {
+  min-height: 50px;
+  line-height: 25px;
+  background: #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ddd;
+  padding-top: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  box-shadow:0px 10px 10px -10px #888;
+  -moz-box-shadow:0px 10px 10px -10px #888;
+  -webkit-box-shadow:0px 10px 10px -10px #888;
+}
+
+#nav {
+  padding:0;
+  margin:0;
+  color:#888888;
+  font-size: 12px;
+}
+
+#nav ul {
+  padding: 0px;
+  margin:13px 0 0 0px;
+}
+
+#nav li {
+  display:inline;
+  padding:0.2em 1em;
+  color:#000000;
+  text-decoration:none;
+  border:0px solid #000;
+  margin:0 0 0 0px;
+  @media (max-width: $screen-xs-max) {
+    margin-right: 15px;
+    padding: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+}
+
+#nav li a {
+  color: #888888;
+  text-decoration:none;
+  &:hover {
+    color:$gray-kyn;
+    border-bottom: 2px solid #e5e5e5;
+  }
+  &.active, &.active:hover {
+    font-weight: bold;
+    color:$gray-kyn-light;
+    text-decoration:none;
+    border-bottom: 4px solid #e5e5e5;
+    cursor: default;
+  }
+}
+
+#filter-focus {
+  position: absolute;
+  top: 280px;
+}
+
+h3.logo-match {
+    color: #505b65;
+}
+
+///
+/// Discover Page
+///
+
+#discover-welcome-well {
+  margin-bottom: 50px;
+}
+
+#discover-welcome-boxes {
+  margin: 75px 0;
+}
+
+.discover-welcome-box-shadow {
+  box-shadow: 1px 1px 10px #eee;
+  min-height: 400px;
+}
+
+.discover-welcome-box {
+  height: 150px;
+  padding: 20px;
+  border-radius: 5px;
+
+  span {
+    position: absolute;
+    top: -15px;
+    left: -5px;
+  }
+  &.box1 {
+    background-image: url('#{$s3Path}/images/social-network-650w.jpg');
+  }
+  &.box2 {
+    background: url('#{$s3Path}/images/dispatch-ipad.jpg');
+    background-size: cover;
+  }
+  &.box3 {
+    background: url('#{$s3Path}/images/experts-chicago.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+.get-started-wrapper {
+  font-family: "Crimson Text";
+  font-size: 2em;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 250px;
+  height: 200px;
+  line-height: 50px;
+  text-align: center;
+  background-color: $green;
+  color: white;
+  margin: 50px auto 100px auto;
+  padding-top: 70px;
+}
+
+i.icon-shadow {
+  text-shadow: 0px 0px 30px #000;
+}
+i.icon-shadow-white {
+  text-shadow: 0px 0px 30px #fff;
+}
+
+.discover-welcome-outro {
+  background-color: $gray-kyn;
+  color: white;
+  padding: 50px;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  .outro-text {
+    color: $green;
+  }
+}
+
+.welcome-outro-cta {
+  //padding-top: 75px; //if tagline exists
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+ul.discover-filter-nav {
+  li {
+      white-space: nowrap;
+  }
+  .tooltip-inner {
+    min-width: 200px;
+  }
+}
+
+// Discover Page cards
+#allposts {
+  //margin-left: 20px; //Let Bootstrap do its thing
+  margin-top: 20px;
+  //margin-bottom: 100px;
+  margin-right: 0px;
+  padding:0px;
+  //background: #eeeeee; //Use existing Kyn background
+  //background: url("#{$s3Path}/images/bg.png");
+  min-height: 600px; // Allows consistency on ScrollToFilter effect for short pages
+}
+
+.eachpost {
+  background-color: $white;
+  //width: 300px;
+  height: $cardHeight;
+  //font-family: $font-family-sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  display: inline-block;
+  padding: 0px;
+  margin: 0px 25px 25px 0px;
+  position: relative;
+  @include kyn-box-shadow;
+}
+
+#allposts .eachpost:first-child {
+  margin-left: 0;
+}
+
+.eachpost.solid-color {
+  background-color: red;
+  color: white;
+  font-family: Lato, Arial;
+  font-size: 18px;
+  line-height: 0px;
+  text-align: center;
+  height: 120px;
+  padding-top: 80px;
+}
+
+.flip-container:hover .icon-flip {
+  display: block;
+}
+
+.cards-header {
+  font-size: 1em;
+  line-height: 1em;
+  letter-spacing: 1px;
+  //background-color:#333;
+  background-color: $gray-kyn;
+  color: $white;
+  color: $gray-kyn-light;
+  padding: 10px;
+  //font-family: "Open Sans", sans-serif;
+  //font-weight: 200;
+  &.cards-type {
+    &.type-kyn-circle {
+      border-bottom: 2px solid $green;
+    }
+    &.type-sponsored {
+      border-bottom: 2px solid $green;
+    }
+  }
+  &.cards-header-subcategory {
+    font-size: .8em;
+    font-weight: normal;
+    &.box {
+      color: white;
+      padding: 2px 7px;
+      &.sponsored {
+        //background-color: $gray-light;
+        background-color: $green;
+      }
+      &.circle {
+        background-color: $green;
+      }
+    }
+    &.cards-badge {
+      background-color: transparent;
+      color: $red;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+    }
+  }
+}
+
+.cards-subcategory-footnote {
+  padding: 5px;
+  background-color: $gray-lighter;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  margin: 5px;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+.tooltip-inner {
+  &.cards-badge {
+    min-width: 200px;
+  }
+}
+
+a.cards-body-name {
+  color: $text-color;
+}
+
+.cards-body {
+  font-size: 1em; //TODO: Should use em
+  line-height: 1.3em;
+  padding: 20px;
+  border-top: 1px solid $hr-border;
+  &.cards-body-staff {
+    padding: 0 20px;
+  }
+  .cards-top-buffer {
+    padding: 10px 0 0 0;
+  }
+  .cards-related-parties {
+    .list-header {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 65%;
+      line-height: 1.3em;
+      text-transform: uppercase;
+      color: $gray-light;
+      &:first-child {
+        margin-top: 0px;
+      }
+      hr {
+        margin: 3px 0 5px 0;
+      }
+    }
+  }
+}
+
+.cards-body-buttons {
+  padding: 10px 0;
+  //height: 30px; //TODO Fix hack
+}
+.cards-body-description {
+  margin-top: 10px;
+}
+
+.staff-description {
+  margin-bottom: 25px;
+  font-size: 1em;
+  line-height: 1.2em;
+}
+
+.truncate-fade {
+  position: relative;
+  height: 6.0em; //3x or exactly three lines
+}
+
+.truncate-fade:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+}
+
+a.truncate-view-more {
+  color: $gray-light;
+}
+
+.cards-staff-wrapper {
+  padding: 20px;
+}
+
+.cards-img {
+  //width: 220px;
+  height: 120px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  &.cards-img-w-gutter {
+    width: 200px;
+    padding:20px 10px 0px 10px;
+  }
+}
+
+.img-staff {
+  width: 90px;
+  padding: 10px;
+}
+
+.avatar-list {
+  margin-top: 10px;
+  &:first-child {
+    margin-top:0px;
+  }
+}
+
+.icon-flip {
+  //opacity: 0.6;
+  padding:5px;
+  width: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;
+   border-top-left-radius: 5px;
+   //border-top: 1px solid #96a5b2;
+   //border-left: 1px solid #96a5b2;
+   border-top: 1px solid #ddd;
+   border-left: 1px solid #ddd;
+   background-color: white;
+   color: #bbb;
+   &.white-bg {
+    background-color: white;
+   }
+   &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+   }
+   img {
+    width: 20px;
+   }
+}
+
+.icon-flip:before {
+  content: 'more...';
+}
+
+.icon-flip-img:before {
+  content: url('#{$s3Path}/images/icons/icon-flip-small.png');
+  position: relative;
+  left: 10px;
+  top: 3px;
+}
+
+.discover-coinvest-cta {
+  font-family: "FontAwesome";
+  font-size: 0.8em;
+  position: absolute;
+  bottom: 3px;
+  left: 10px;
+  color: $gray-light;
+  &:before {
+    //content: "\f023\ CoINVEST ";
+    content: "CoINVEST: ";
+  }
+  &.discover-coinvest-cta-yes {
+    &:after {
+      color: $blue;
+      content: "Yes";
+    }
+  }
+  &.discover-coinvest-cta-no {
+    visibility: hidden;
+    &:after {
+      content: "No";
+    }
+  }
+  &:hover {
+    //opacity: 0.8;
+    //cursor: pointer;
+  }
+}
+
+ul#discover-card-cta-more-options {
+  list-style: none;
+  padding-left: 10px;
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+  }
+}
+
+.founder-message-bg {
+      background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #363636), color-stop(100%, #505b65));
+    background: -moz-linear-gradient(#363636, #505b65);
+    background: -webkit-linear-gradient(#363636, #505b65);
+    background: linear-gradient(#363636, #505b65);
+}
+
+// Discover Page Curated Cards
+.eachpost {
+  &.eachpost-curated {
+    background-size: auto $cardHeight;
+  }
+}
+
+.well-curated {
+  min-height: $cardHeight;
+}
+.circle-text {
+    width:65%;
+    margin: 35% auto 0 auto;
+    &:hover {
+      cursor: pointer;
+    }
+}
+.circle-text:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height:0;
+    padding-bottom: 100%;
+    //background: $red;
+    background-color: rgba(white, .8);
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.circle-text div {
+    float:left;
+    width:100%;
+    padding-top:25%;
+    line-height:1em;
+    margin-top:-0.5em;
+    text-align:center;
+    h3 {
+      font-weight: 400;
+    }
+}
+a.indicator-name-curated:hover{
+  cursor: pointer;
+}
+.label-curated {
+  position: absolute;
+  top: 0;
+  opacity: .8;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  text-shadow: none;
+  font-weight: 100;
+  padding: 10px;
+  width: 100%;
+}
+
+//
+
+.improve-lt-green {
+  color: #98dac6;
+}
+
+.avatar-small {
+  margin-right: 15px;
+  max-width: none !important;
+  .avatar-small-dimensions {
+    width: 50px;
+    height: 50px;
+    max-width: none !important;
+  }
+  .avatar-mini-dimensions {
+    width: 30px;
+    height: 30px;
+    max-width: none !important;
+  }
+}
+
+.media-cards {
+  margin: 0px;
+}
+
+.media-body-discover-welcome {
+  font-size: 1.5em;
+  line-height: 1.2em;
+  color: $gray-kyn;
+}
+
+.media-body-discover-cta {
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.avatar-small-grantmakers {
+  margin-right: 7px;
+  width: 40px;
+  height: 40px;
+}
+
+.avatar-small {
+  margin-right: 15px;
+  width: 50px;
+  height: 50px;
+}
+
+.avatar-mini {
+  margin-right: 7px;
+  width: 30px;
+  height: 30px;
+}
+
+.img-media-object {
+  margin: 0 !important; //reset default bootstrap media-object spacing
+  .avatar {
+    max-width: none !important;
+    &.avatar-small {
+      margin-right: 15px;
+      width: 50px;
+      height: 50px;
+    }
+    &.avatar-mini {
+      margin-right: 7px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+  .logo {
+    max-width: none !important;
+    &.logo-small {
+      margin-right: 15px;
+      width: 50px;
+    }
+    &.logo-mini {
+      margin-right: 7px;
+      width: 40px;
+    }
+  }
+}
+
+// New CSS for tag treatment
+  ul.tags-org {
+    li.category-header {
+      font-size: 12px;
+      display: block;
+    }
+    li.category-data {
+      font-weight: bold;
+      margin-right:15px;
+    }
+  }
+
+// Old CSS for tag treatment
+ul.tags-org-header, .tags-org-header {
+  a {
+    color: $gray-light !important;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+ .tags-org-sidebar {
+  margin-left: 0;
+  margin-bottom: 0;
+  line-height: 30px;
+}
+ul.tags-org-sidebar {
+  font-size: 12px;
+  h6 {
+    margin-bottom:0px;
+    margin-top: -10px; // TODO: Fix hack
+  }
+  a i {
+    text-decoration: none;
+    list-style-type: none;
+  }
+  // IE9 Hack
+  li {
+    list-style-type: none !important;
+    &.category {
+      margin-left: 0px;
+    }
+    &.category-data {
+      margin-left: 3px;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 14px;
+    }
+    a {
+        color: #aaa;
+        text-decoration: none;
+        &.web:hover {
+          text-decoration: underline;
+        }
+    }
+  }
+}
+
+.category {
+  display: inline-block;
+  padding: 0px 4px;
+  background-color: #aaa;
+  color: #fff;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-bottom: 2px;
+}
+
+ul.tags-org-filter {
+  font-size: 12px;
+  background-color: #ECF0F1;
+  color: white;
+  li.descriptor {
+  padding:8px 12px 8px 12px;
+  font-weight: bold;
+  }
+}
+
+.alert > a, .alert > p > a {
+  text-decoration: underline !important;
+  color: inherit;
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.js-intro-tip-hidden {
+  display: none;
+}
+
+.alert-inApp {
+  background: #f5f5f5;
+}
+
+.alert-card-general {
+  color: $text-color;
+  background-color: $gray-lighter;
+}
+
+#alert-get-started {
+  position: relative !important;
+  top: -20px !important;
+  margin-left: 50px !important;
+  margin-right: 50px !important;
+  p {
+    text-align: center;
+    margin: 0;
+  }
+  /*.intro {
+    text-align: right;
+    width: 160px;
+    float: left;
+    clear: left;
+    line-height: 30px;
+  }
+  .body {
+    text-align: center;
+    margin-left: 10px;
+    line-height: 30px;
+  }
+  */
+  button {
+    margin-right: 10px;
+    border: 2px solid #fff;
+  }
+  dl.dl-horizontal {
+    margin: 0;
+  }
+}
+
+.keep-popover-styling {
+  .popover-title, .popover-content {
+    color: $gray-dark;
+  }
+}
+
+// Filter - toggle icon color in lists based on filter hover in sidebar
+
+.filter {
+  &:hover {
+    text-decoration: none;
+    //color: #3498db !important;
+    cursor: pointer;
+  }
+}
+
+i[rel="filter"] {
+  color: #ddd;
+}
+
+.highlight {
+  color: #3498db !important;
+}
+
+
+// Activity Feed
+// Note - much of this css is likely unused (represents old layout)
+// TODO - clean 'er up
+
+// new stuff
+@media (max-width: 978px) {
+  .navbar .nav > li > a {
+    line-height: 25px;
+  }
+}
+
+ul.opportunities-filter-nav {
+  li {
+    white-space: nowrap;
+  }
+}
+// end new stuff
+
+.activity-intro-wrapper {
+  position: relative;
+}
+img.intro-steps-img {
+    margin-right: 10px;
+    width: 67px;
+  }
+.flip-container {
+  &.activity-intro {
+    height: 380px;
+  }
+  .back-header {
+    background-color: #aaa;
+    color: white;
+    padding: 2px 2px;
+    text-shadow: none;
+  }
+}
+
+hr.intro-steps {
+  border-top: 1px solid lighten($blue, 35%);
+  border-bottom: 1px solid lighten($blue, 35%);
+}
+
+.intro-steps-title {
+  border-top: 1px solid lighten($blue, 25%);
+  border-bottom: 1px solid lighten($blue, 25%);
+}
+ul.intro-steps {
+  list-style-type: none;
+  margin-bottom: 35px;
+  li {
+    margin: 20px 10px;
+    //padding-left: 70px;
+    //margin: 5px;
+    //width: 200px;
+    vertical-align: top;
+    &:first-child {
+      padding-top: 0px;
+    }
+    &:before {
+      //content: '';
+    //font-family: "FontAwesome";
+    display: inline-block;
+    margin-left: -1.2em; /*same as padding-left set on li*/
+    width: 1.2em; /*same as padding-left set on li*/
+    }
+    .media-object {
+      margin-right: 10px !important;
+    }
+  }
+}
+ul.intro-steps li.how-to-step-one {
+  //background-image: url("#{$s3Path}/images/home/landing-box-social-network-HL.jpg");
+}
+a.hover-underline-none:-webkit-any-link{ //wow, that's ugly. TODO: http://stackoverflow.com/questions/8268712/blue-lines-under-links-on-my-site-even-though-ive-disabled-all-related-css
+text-decoration:none;
+}
+
+.fa-color-light-green {
+  color: lighten($green, 25%);
+}
+
+.grant-feed-wrapper {
+  line-height: 40px;
+  .popover-content {
+    line-height: 20px;
+  }
+}
+
+.grant-feed {
+  padding-left: 15px;
+}
+
+ul.grant-feed-donors-only {
+  margin-bottom:0px;
+  min-height: 40px;
+  li {
+    line-height:40px
+  }
+  li:first-child {
+    text-align: center;
+    width:60px;
+    margin-right:5px;
+    border-right:1px solid #eee;
+  }
+}
+
+a.accordion-toggle {
+  text-decoration: none;
+}
+
+.accordion-group-activity {
+  @include border-white-bg;
+  background-color: white !important;
+  //margin-bottom: 5px; //Flat UI
+  margin-bottom: 10px;
+  .accordion-inner {
+    border-top: 1px dashed #e5e5e5;
+    border-bottom: 20px solid #aaa;
+  }
+  &.opening {
+    margin: 36px 0 24px 0;
+  }
+  a {
+    color: $text-color;
+  }
+  a.donate-cta {
+    color: white;
+  }
+}
+.org-profile a, a.org-link {
+    color: $text-color;
+}
+a.org-profile-blank {
+  color: $green;
+}
+
+.grant-feed-header {
+    border: none !important;
+    position: relative;
+    top: 4px;
+    background-color: #aaa !important;
+    color: white;
+    //margin-bottom: 0px;
+    margin-bottom: 15px;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 20px;
+    //@include kyn-box-shadow;
+  }
+.accordion-group-activity {
+  .grant-feed-box {
+    //border-top: 4px solid #ddd !important; //Flat UI
+    //@include kyn-box-shadow;
+    padding: 8px 15px;
+    opacity: 1;
+  }
+}
+
+.grant-amount-wrapper {
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.grant-grantmaker {
+  padding-left:20px;
+  border-left:1px solid #ccc;
+}
+
+.grant-feed-toggle-wrapper {
+  padding-left:15px;
+  border-left:1px solid #ccc;
+}
+
+a.grant-feed-toggle {
+  //font-size: .9em;
+      //color: $red;
+      font-size: .8em;
+      color: $gray-light;
+      padding-right: 10px;
+}
+
+.accordion-toggle.active {
+  background-color: white;
+}
+
+// Grantmakers Feed
+
+.grantmaker-feed-box {
+  background-color: white !important;
+  height: 40px;
+  padding: 8px 15px;
+}
+
+ul.grantmakers-feed li {
+  display: inline;
+}
+
+ul.grantmakers-feed li:last-child {
+
+text-align: center;
+width: 60px;
+margin-left: 5px;
+border-left: 1px solid #eee;
+line-height: 40px;
+}
+
+
+// Discover Page
+
+.cards-cta-discover {
+  background: url("#{$s3Path}/images/home/landing-box-social-network.jpg");
+  height: $cardHeight;
+  padding: 25px 20px;
+  font-family: $font-family-sans-serif;
+  .flip-container, .front, .back {
+    width: 100%;
+    height: inherit;
+  }
+  .back {
+    margin-top: -5px;
+  }
+  .shadebox {
+    padding: 0px;
+    margin-left: -30px;
+    margin-right: -30px;
+    line-height: inherit;
+  }
+  a.discover-cta-link {
+    color: $text-color !important;
+    text-decoration: underline;
+  }
+}
+
+hr.myKyn-select {
+  border-bottom:1px solid #999;
+  position:relative;
+  top:10px
+}
+
+.eachpost  {
+  .popover.bottom .arrow {
+    left: initial;
+    right: 25%;
+  }
+  .popover {
+    left: 0 !important;
+  }
+  .popover-content {
+  }
+}
+
+.cards-related-parties {
+  .popover-content {
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+}
+
+.grantmaker-heading .popover-content {
+  font-size: .6em;
+  line-height: 1.2em;
+  font-weight: normal;
+}
+
+
+// Modals
+
+.protoModal {
+  .contactUs {
+    color: #3498db;
+  }
+}
+
+//
+
+.icon-addon {
+  width: 9px;
+  height: 9px;
+  &.icon-usa {
+    background: url("#{$s3Path}/images/icon-usa.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &.icon-regional {
+    background: url("#{$s3Path}/images/icon-regional.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  &.icon-arts {
+    background: url("#{$s3Path}/images/icon-arts.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.icon-white {
+  color: white;
+}
+
+// Recommendation Sidebar
+.sidebar-org-right {
+  .recoCategory {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-bottom:5px;
+    }
+    .topCategory {
+      margin-top: 0px;
+    }
+    hr {
+      margin-top:0px;
+    }
+
+  .media-group {
+    margin-bottom:40px;
+    .media {
+      margin-top:25px;
+      .media-heading {
+        font-weight: bold;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.lead {
+  &.lead-top-buffer {
+    padding-top: 40px;
+  }
+  .lead-intro-copy {
+    font-size: 14px;
+    text-align: center;
+  }
+  .popover-content {
+    font-size: 14px;
+}
+}
+
+.reco-no-profile {
+  font-size: 12px;
+  line-height: auto;
+}
+
+.dragDrop {
+    background: #fff;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 20px;
+    border: 3px dashed #7F8C8D;
+}
+
+.getStarted {
+    background: #fff;
+    color: #7f8c8d;
+    text-align: left;
+    padding: 20px;
+    // border: 1px dashed #7F8C8D;
+}
+
+// Profile form
+#aboutVisitor {
+  border-top: 5px solid #3498db;
+  display: none;
+}
+button#aboutVisitor {
+
+}
+#tellUs {
+  .control-group {
+    margin-bottom: 35px;
+  }
+  .control-label {
+    font-weight: bold;
+  }
+}
+/* Replace default checkboxes with Font Awesome. TODO - get spacing to work properly
+[type=checkbox] {
+    display: none;
+    width: .5em;
+    color: red;
+}
+
+[type=checkbox] + label:before {
+    content: "\f096";
+}
+
+[type=checkbox]:checked + label:before {
+    content: "\f046";
+}
+
+.checkbox-spacing-hack {
+  padding: 10px 0;
+}
+*/
+
+[type="text"], [type="email"] {
+    border: 0px solid #fff !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+  transition: none !important;
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+}
+
+// About Us link
+#aboutUs {
+  display: none;
+}
+
+// Connect Your Account
+#connectAccount {
+  li {
+    margin-bottom: 15px;
+    /* img {
+      &:hover {
+        border: 1px solid red;
+      } // Note - the border solution is jumpy
+    } */
+  }
+}
+
+// Use font-awesome for addMyKyn checkboxes
+/*
+[type=checkbox] {
+    display: none;
+    width: .5em;
+}
+
+[type=checkbox] + label {
+    color: #f15755;
+    font-size: 85%;
+    display: none; // Hide if using drag and drop
+}
+
+[type=checkbox] + label:before {
+    content: "\f10c";
+}
+
+[type=checkbox]:checked + label:before {
+    content: "\f111";
+}
+
+[type=checkbox] + .icon-howto {
+  font-size: 100%;
+  margin-left: auto;
+}
+*/
+
+/* font-color is not working TODO: Fix font-color when using new background colors */
+.kyn-background {
+  &.blue, &.blue a {
+  background-color: #3498db;
+  color: #fff !important;
+  }
+  &.green, &.green a {
+  background-color: #1abc9c;
+  color: #fff !important;
+  }
+  &.rose, &.rose a {
+  background-color: #f15755;
+  color: #fff !important;
+  }
+}
+
+a.cta {
+  background-color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    background-color: inherit !important;
+  }
+  &.blue {
+  color: #3498db;
+  }
+    &.green {
+  color: #1abc9c;
+  }
+    &.rose {
+  color: #f15755;
+  }
+}
+
+.blue {
+  color: #3498db;
+  }
+.green {
+  color: #1abc9c;
+  }
+.rose {
+  color: #f15755;
+  }
+  a.rose {
+    &:hover {
+    color: #bd362f;
+  }
+  &:active {
+    color: #bd362f;
+  }
+  &:visited {
+    color: #bd362f;
+  }
+  &:focus {
+    color: #bd362f;
+  }
+  }
+.red {
+  color: $state-danger-text;
+}
+.white {
+  color: white;
+}
+.gray-kyn {
+  color: $gray-kyn;
+}
+.gray-lightest {
+  color: $gray-lighter;
+}
+.gray-medium {
+  color: $gray-light;
+}
+
+.gray-kyn-light {
+  color: #8996a0;
+}
+.gray-kyn-dark {
+  color: $gray-kyn-dark;
+}
+.gray-kyn-black {
+  color: $gray-kyn-black;
+}
+.gray-kyn-dark-text, .gray-kyn-dark-text a {
+  color: $gray-kyn-dark-text;
+}
+
+//Global Media Queries
+@media (max-width: $screen-xs-min) {
+  .col-no-padding, .container-fluid-no-padding {
+    padding: 0;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .col-min-padding, .container-fluid-min-padding, .container-min-padding {
+    padding: 0 5px;
+  }
+  //Need to use row-no-padding unless container is nested in another container
+  .row-no-padding {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .rs-btn-lg-wrap {
+    white-space: normal;
+  }
+  .rs-header-brand img {
+    width: 125px !important;
+  }
+  .navbar .nav.navbar-inside-app > li > a {
+    line-height: 25px !important;
+  }
+  .rs-input-group {
+    display: inline-block;
+  }
+  .rs-btn-input-group-lg {
+    margin-top: 15px;
+    float: right;
+  }
+  .rs-media-body {
+    overflow: visible;
+  }
+  .rs-navbar-toggle-match { //hack
+    position: relative;
+    top: 6px;
+  }
+}
+@media (max-width: 978px) {
+  .rs-header-brand img {
+    width: 85px;
+  }
+  .navbar-fixed-top, .navbar-fixed-bottom, .navbar-static-top {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom:0;
+  }
+}

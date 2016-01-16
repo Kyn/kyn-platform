@@ -1,0 +1,181 @@
+.grantmaker-profile {
+  a, a.org-link {
+    color: $text-color;
+  }
+}
+.grantmaker-subheader {
+  background-color: #aaa;
+  color: white;
+  padding: 0px 5px;
+  font-size: 16px;
+}
+ul.breadcrumb {
+  background-color: white;
+}
+ul.grantmaker-cards li {
+  padding: 0px;
+}
+.avatar-medium-grantmakers {
+  margin-right: 7px;
+  width: 60px;
+  height: 60px;
+}
+.grantmaker-header-bar {
+  background-color:#aaa;
+  color: white;
+  padding:5px;
+  margin-top: 50px;
+}
+.flip-container-grantee, .front-grantee, .back-grantee {
+  height: 275px !important;
+}
+.back-grantee {
+  padding:25px;
+}
+.cards-grantee {
+  margin: 15px 0;
+  //max-width: 230px;
+  background: #fff;
+  box-shadow: 0 0 2px rgba(0,0,0,.5);
+  color: #353535;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+  white-space: normal;
+  hr {
+    margin: 0 0;
+  }
+  .cards-grantee-details {
+    //color: #bbb;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+  }
+  .cards-grantee-buttons {
+    margin-top: 2px;
+    margin-left: -20px;
+    margin-right: -20px;
+    //padding: 10px;
+    //padding-bottom: 0px;
+  }
+  .list-header-grantee {
+    margin-top: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 65%;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    color: #bbb;
+    &:last-child {
+      margin-left: 10px;
+    }
+  }
+  .icon-flip {
+    padding-top: 2px;
+    background-color: white;
+    opacity: 1;
+    color: #bbb;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+  }
+}
+.cards-content-body-wrapper {
+
+}
+.cards-grantee-img-wrapper {
+  height: 115px;
+  overflow: hidden;
+}
+.cards-grantee-name {
+font-size: 1em;
+line-height: 1em;
+padding: 15px 10px;
+font-weight: bold;
+min-height: 58px; //hack-a-loo
+}
+
+.grantmaker-coinvest-wrapper {
+  .coinvest-benefits-wrapper {
+    margin-top: 40px;
+  }
+  .coinvest-avatars-wrapper {
+    margin-top: 25px;
+    font-size: 1.2em;
+  }
+  .coinvest-muted-header {
+    margin-top: 35px;
+  }
+  img.coinvest-avatars {
+    width: 40px;
+    margin-right: 15px;
+  }
+  .dl-horizontal dt {
+    text-align: left;
+  }
+  dl.dl-placeholders {
+    dt {
+      width: 200px;
+    }
+    dd {
+      margin-left: 220px;
+      margin-bottom: 5px;
+    }
+    dd a {
+      color: $gray-light;
+    }
+    dd a i.fa-twitter-square {
+      color: $blue;
+    }
+  }
+}
+
+///
+/// Table
+///
+.coinvest-table-wrapper {
+  .panel {
+    border: none;
+    border-radius: 5px 5px 0px 0px;
+    @include kyn-box-shadow;
+    &.panel-blue {
+      .panel-heading {
+        background-color: $gray-kyn;
+        color: white;
+      }
+    }
+    .panel-heading {
+      border-radius: inherit;
+    }
+  }
+  thead {
+    background-color: $gray-lighter;
+    font-size: .9em;
+  }
+  th {
+    padding: 5px 7px;
+  }
+  td {
+    vertical-align: middle !important;
+  }
+  .checkbox {
+    min-height: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    position: relative;
+    margin-left: 0;
+  }
+  .user-amount {
+    background-color: white;
+    width: 75px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+}
+

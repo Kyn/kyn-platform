@@ -1,0 +1,177 @@
+//Phones
+@media (max-width: 480px) {
+  //Responsive specific global classes, rs-*
+  .rs-phone-bold {
+    font-weight: bold;
+  }
+  //Home landing page
+  .rs-wrap-phone {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  #landing-box-0 {
+    background-image: url("#{cloudfrontPath}/images/generations-480w.jpg") !important;
+  }
+  .landingTemplate {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-right: -80px; //WTF?
+    &.rs-generations {
+      padding: 0 0 !important;
+      margin-top: 120px !important;
+    }
+  }
+
+  .shadebox-home-hero {
+    margin-top: -150px !important;
+  }
+
+  .rs-landing-text-logo {
+    vertical-align: top;
+  }
+
+  .shadebox-img {
+    vertical-align: text-bottom;
+  }
+
+  .rs-landingTemplate {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+ .rs-landingTemplateHack {
+    margin-right: -60px;
+  }
+
+  #generations-footer .rs-landingTemplateHack-footer { //I'm really crushing it with the clean code bit...jesus
+  margin-right: -80px;
+  }
+
+  .masthead h1 {
+    font-size: 3em;
+  }
+  //Main body
+  footer > nav {
+    margin-left:-20px;
+    margin-right:-20px;
+  }
+  .navbar {
+    .nav.nav-inApp>li {
+      width: 100%;
+      a {
+        line-height: 20px !important;
+      }
+    }
+  }
+  //Awesome Alt Payment Buttons
+  ul.alt-payment-buttons {
+    li {
+      margin-top: 20px;
+    }
+  }
+  //Activity Intro
+  .rs-alert-intro {
+    padding: 8px 14px 8px 14px;
+  }
+  ul.intro-steps {
+  li {
+    padding-left: 0px;
+    &:first-child {
+      //padding-top: 0px;
+    }
+  }
+}
+  //Discover cards
+  .eachpost {
+    display: block !important;
+    margin: 20px auto !important;
+  }
+  div.media-object.img-media-object.pull-left {
+    float:left;
+  }
+  .grant-feed-wrapper div [class*="span"], .grant-feed-toggle-wrapper, .grant-grantseeker {
+    border: none !important;
+    display: inline-block;
+  }
+  .grant-feed-toggle-wrapper {
+    //background-color: $grayKyn;
+    //background-color: #666;
+    background-color: #ccc;
+    display: block;
+    //margin-top: 30px;
+    line-height: 30px;
+  }
+  .accordion-activity-feed .grant-feed-box {
+    box-shadow:0px 0px 10px #888;
+    -moz-box-shadow:0px 0px 10px #888;
+    -webkit-box-shadow:0px 0px 10px #888;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
+  }
+  .js-follow-toggle-child {
+    visibility: visible !important;
+    float: right;
+  }
+  .grant-amount-wrapper {
+    display: none !important;
+    background-color: #ccc;
+    line-height: 1em;
+    padding: 8px; //Damn that feels hacky
+    .grant-amount {
+      font-size: 1em !important;
+      color: white !important;
+      font-weight: bold !important;
+    }
+  }
+  ul.grant-feed-donors-only li.rs-amount {
+  display: none; //Quick hack to get MVP out the door
+  }
+  .grant-grantseeker {
+    padding-left: 0;
+  }
+  .rs-grantseeker {
+    display: inline !important;
+  }
+  a.grant-feed-toggle {
+    font-size: 1em !important;
+    color: white !important;
+    font-weight: bold !important;
+  }
+  footer {
+  height: 54px; //incredibly hacky
+  }
+}
+
+//Tablets
+@media (min-width: 768px) and (max-width: 979px) {
+  //Home - Landing Page
+  .rs-landing-text-logo {
+    vertical-align: top;
+  }
+
+  .shadebox-img {
+    vertical-align: text-bottom;
+  }
+
+  .eachpost {
+    width: 214px; //And if that ain't a hack...
+  }
+  .js-follow-toggle-child {
+    visibility: visible !important;
+    float: right;
+  }
+  .flip-container.activity-intro {
+    width: auto;
+    .front, .back {
+      width: auto;
+    }
+  }
+  div.pull-left.grant-amount {
+    margin-left: -5px; //temp hack until we redo activity feed layout
+  }
+  .rs-indicator-ellipsis {
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+    width: 165px !important;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}

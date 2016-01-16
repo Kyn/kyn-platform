@@ -1,0 +1,302 @@
+//Currently covers the landing page
+
+.navbar-text {
+  float: none;
+}
+
+.upcoming-close-message {
+  //margin-bottom: 100px;
+  padding: 10px;
+  background-color: $gray-kyn-black;
+  color: $gray-kyn-light;
+  border-bottom: 1px solid darken($gray-kyn-black, 2%);
+}
+.landing-view-tech-dispatch-bg {
+  //background-color: white;
+  .landing-view-tech-dispatch-wrapper {
+    padding: 20px;
+    .media-heading-label {
+      @media (max-width: $screen-sm-max) {
+        margin-top: 25px;
+      }
+    }
+    .tech-dispatch-img {
+      width: 100%;
+      @include kyn-box-shadow;
+    }
+  }
+}
+.avatar-curator-small {
+  width: 50px;
+  height: 50px;
+}
+.curator-subtext-upcoming {
+  margin: 0px;
+  //background-color: darken($gray-kyn, 5%);
+  background-color: lighten($gray-light, 20%);
+  color: white;
+  border-top: 1px solid lighten($gray-light, 10%);
+  p {
+    font-size: 2.1em;
+    line-height: 1.4em;
+    margin:0;
+    //padding: 30px;
+    padding: 150px 0px;
+    font-weight: normal;
+    text-transform: none;
+  }
+}
+.upcoming-example-bg {
+  background: url('#{$cloudfrontPath}/images/social-network-650w.jpg') repeat;
+  //@include filter-gradient(#000000, #000000, horizontal); // IE6-8
+  $experimental-support-for-svg: true;
+  //@include background(
+  //linear-gradient(to right, rgba(0,0,0, 1) 0%, rgba(0,0,0, 0.7) 25%, rgba(0,0,0, 0.7) 75%,rgba(0,0,0, 1) 100%),
+  //url('#{$cloudfrontPath}/images/social-network-650w.jpg')
+  //url('/images/progressive.jpg')
+  //repeat
+  //center center
+  //fixed);
+  color: white;
+  @media (max-width: $screen-sm-max) {
+    background-attachment: scroll;
+  }
+}
+.upcoming-example {
+  //background: url('http://placehold.it/1400');
+  //background-size: cover;
+  //background-repeat: no-repeat;
+  //height: 500px;
+  padding: 50px;
+  p {
+    font-size: 2.1em;
+    line-height: 1.4em;
+    margin:0;
+    //padding: 30px;
+    padding: 50px 0px;
+    font-weight: normal;
+    text-transform: none;
+  }
+  hr {
+    border-top: 1px solid $gray-kyn;
+    border-bottom: 1px solid $gray-kyn-black;
+  }
+}
+#upcoming-wrapper {
+  position: relative;
+  //margin-bottom: 100px;
+  #upcoming-bg {
+    //background: url('http://placehold.it/1400');
+    //background-size: cover;
+    //background-repeat: no-repeat;
+    height: 550px;
+    //margin-bottom: 100px;
+    background: url('#{$cloudfrontPath}/images/dispatch-ipad.jpg') no-repeat;
+    //@include background(
+    //linear-gradient(to right, rgba(0,0,0, 1) 0%, rgba(0,0,0, 0.7) 25%, rgba(0,0,0, 0.1) 100%),
+    //url('#{$cloudfrontPath}/images/dispatch-ipad.jpg')
+    //url('/images/progressive.jpg')
+    //no-repeat
+    //center center
+    //fixed);
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url("//d2zrr75qo845hh.cloudfront.net/images/dispatch-ipad.jpg") no-repeat center center fixed;
+    background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(25%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(0, 0, 0, 0.1))), url("//d2zrr75qo845hh.cloudfront.net/images/dispatch-ipad.jpg") no-repeat center center fixed;
+    background: -moz-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("//d2zrr75qo845hh.cloudfront.net/images/dispatch-ipad.jpg") no-repeat center center fixed;
+    background: -webkit-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("//d2zrr75qo845hh.cloudfront.net/images/dispatch-ipad.jpg") no-repeat center center fixed;
+    background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("//d2zrr75qo845hh.cloudfront.net/images/dispatch-ipad.jpg") no-repeat center center fixed;
+    background-size: cover, cover;
+    @media (max-width: $screen-sm-max) {
+      background-attachment: scroll;
+    }
+  }
+  .upcoming-dispatch-logo {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+  .upcoming-dispatch-logo-img {
+    width: 200px;
+    //padding: 5px;
+    //background-color: rgba(0,0,0,.5);
+    //border-radius: 3px;
+  }
+  .upcoming-dispatch-logo-col-2 {
+    height: 300px;
+  }
+  .upcoming-hero-text {
+    padding: 150px;
+    @media (max-width: $screen-sm-max) {
+      padding: 50px;
+    }
+    @media (max-width: $screen-xs-max) {
+      padding: 10px;
+    }
+  }
+  .upcoming-hero-text-subcopy {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-weight: 100;
+    border-radius: 5px;
+    @media (max-width: $screen-sm-max) {
+      display: block;
+    }
+    &.muted {
+      text-transform: uppercase;
+      color: $gray-kyn-light;
+    }
+  }
+  .upcoming-hero-footer {
+    //margin-bottom: 100px;
+    padding: 10px;
+    background-color: $gray-kyn-dark;
+    color: $gray-kyn-light;
+  }
+  .upcoming-hero-text-bg {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: rgba(204,204,204,0.9);
+  }
+  .well-tile {
+    //background-image: url('#{$cloudfrontPath}/images/3px-tile.png')
+    background-color: white;
+  }
+  .curator-descriptor-text {
+    //color: $white;
+    font-size: 1.2em;
+  }
+  .upcoming-current-box {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0px;
+    padding: 0;
+    padding-left: 20px;
+    border: none;
+    @media (max-width: $screen-xs-max) {
+      .media-upcoming {
+        color: $gray-kyn-light;
+      }
+    }
+  }
+  .upcoming-lenses {
+    background-color: $gray-light;
+    color: $gray-lighter;
+    padding: 10px;
+    margin-bottom: 50px;
+  }
+  .upcoming-getty-embed {
+    width: 350px;
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+      float: none !important;
+      margin-bottom: 50px;
+    }
+  }
+  .getty-text-overlay {
+    position: absolute;
+    top: 75px;
+    right: 35px;
+    z-index: 2;
+    color: #bbb;
+    @media (max-width: $screen-xs-max) {
+      top: 50px;
+      right: 50px;
+    }
+  }
+  a.getty-signup {
+    font-weight: bold;
+    font-style: normal;
+    //margin-right: 10px;
+  }
+  .upcoming-dispatch-wrapper {
+    padding: 100px 0;
+    img {
+      width: 100%;
+    }
+  }
+  .future-dispatches-bg {
+    background-color: white;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    .rs-top-buffer {
+      margin-top: 50px;
+    }
+  }
+  .upcoming-cta-wrapper {
+    background-color: $gray-light;
+    color: white;
+    padding: 5px;
+    &.top {
+      background-color: $gray-kyn-dark;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+  .upcoming-later-boxes {
+    padding: 50px;
+    .media {
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 50px;
+      }
+    }
+    @media (max-width: $screen-xs-max) {
+      .media-left {
+        margin-bottom: 25px;
+      }
+    }
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      .media-body {
+        width: 50%;
+      }
+    }
+  }
+  .upcoming-later-img {
+    width: 160px;
+    overflow: hidden;
+  }
+  h5.muted {
+    text-transform: uppercase;
+    color: $gray-kyn-light;
+  }
+  .media .media-tight {
+    margin-top: 5px;
+  }
+  .media-heading-label {
+    color: $gray-kyn-light;
+    text-transform: uppercase;
+    font-size: .7em;
+    font-weight: bold;
+    margin-top: 25px;
+    //position: relative;
+    //top: 12px;
+    border-bottom: 1px solid $gray-lighter;
+    margin-bottom: 5px;
+    &:first-child {
+      margin-top: 10px;
+    }
+  }
+  .upcoming-next-up-img {
+    height: 250px;
+    width: 350px;
+  }
+}
+.media-heading-label {
+    color: $gray-kyn-light;
+    text-transform: uppercase;
+    font-size: .7em;
+    font-weight: bold;
+    margin-top: 25px;
+    //position: relative;
+    //top: 12px;
+    border-bottom: 1px solid $gray-lighter;
+    margin-bottom: 5px;
+    &.getty {
+      border-bottom: 1px solid $gray-kyn-dark;
+    }
+    &:first-child {
+      margin-top: 10px;
+    }
+  }

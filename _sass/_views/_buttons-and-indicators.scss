@@ -1,0 +1,459 @@
+// ----- Changes to bootstrap defaults -----
+
+//IE Hack
+.btn-inverse:active,
+.btn-inverse.active {
+  background-color: #080808 \9;
+}
+
+// Flatten Buttons
+.btn-flat {
+  filter:progid:DXImageTransform.Microsoft.Gradient(enabled='false');
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background-image:none;
+  border:0;
+  -webkit-border-radius:3px;
+  -moz-border-radius:3px;
+  border-radius:3px;
+  padding: 4px 12px; // 3px top and bottom if no border on input fields
+  &.btn-sm {
+    padding: 3px 12px; // 4px top and bottom if no border on input fields
+  }
+  &.btn-xs {
+    font-size: 1em; //Bit of a hack...parent div on cards-body drives a smaller font-size. Cards are the only placed xsmall is used, for now (MVP)
+    padding: 0px 8px !important;
+  }
+  &.btn-lg {
+    padding: 11px 19px;
+  }
+  &:focus {
+    outline: none !important;
+  }
+//    height: 22px; including here is not compatible with buttons larger than "small"
+}
+.btn-border-light {
+  background-color: transparent;
+  color: #aaa !important;
+  border: 2px solid #eee;
+  border-radius: 15px;
+  &:hover {
+    background-color: $gray-kyn-light;
+    color: white !important;
+    border: 2px solid $gray-kyn-light !important; //important needed to reset any <a> classes
+  }
+}
+.btn-border-dark {
+  background-color: $gray-kyn-light;
+  color: white !important;
+  border: 2px solid $gray-kyn-light;
+  border-radius: 15px;
+  &:hover {
+    background-color: white;
+    color: $gray-kyn-light !important;
+    border: 2px solid $gray-kyn-light !important; //important needed to reset any <a> classes
+  }
+}
+.btn-kyn, a.btn-kyn, .btn-gray-kyn, a.btn-gray-kyn {
+  background-color: $gray-kyn !important;
+  color: white !important;
+}
+.btn-gray-kyn-dark {
+  background-color: $gray-kyn-dark !important;
+  color: white !important;
+  &:hover {
+    background-color: darken($gray-kyn-dark, 10%) !important;
+  }
+}
+.btn-gray-kyn-light {
+  background-color: $gray-kyn-light !important;
+  color: white !important;
+  &:hover {
+    background-color: darken($gray-kyn-light, 10%) !important;
+  }
+}
+
+.btn-platform {
+  background-color: #363636 !important;
+  color: $gray-kyn-light !important;
+}
+.btn-platform-black {
+  background-color: $gray-kyn-black !important;
+  color: white;
+}
+.btn-platform-hover-rose {
+  &:hover {
+    background-color: $red !important;
+    color: white;
+  }
+}
+.btn-platform-light {
+  background-color: $gray-kyn-light !important;
+  color: $gray-kyn-dark;
+}
+.btn-no-radius {
+  -webkit-border-radius:0px;
+  -moz-border-radius:0px;
+  border-radius:0px;
+}
+.btn-half-block {
+  width: 49%;
+}
+.btn-halfish-block {
+  width: 48%;
+}
+
+.btn-social {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-social>:first-child {
+  //background-color: rgba(0,0,0,0.1);
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+.btn-social.btn-gray-kyn-dark>:first-child {
+  border-right: 1px solid darken($gray-kyn-dark-text,20%);
+}
+.btn-social.btn-lg{padding-left:61px}.btn-social.btn-lg :first-child{line-height:45px;width:45px;font-size:1.8em}
+//.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm :first-child{line-height:28px;width:28px;font-size:1.4em}
+.btn-social.btn-sm{padding-left:38px}.btn-social.btn-sm :first-child{line-height:25px;width:28px;font-size:1.4em}
+.btn-social.btn-xs{padding-left:30px}.btn-social.btn-xs :first-child{line-height:20px;width:20px;font-size:1.2em}
+
+.opportunities {
+  .btn-block + .btn-block {
+    margin-top: 0px;
+  }
+}
+
+// Button outline style
+.btn-outline {
+    background-color: transparent;
+}
+
+.btn-primary.btn-outline {
+    color: $btn-primary-bg;
+    &:hover {
+      background-color: $btn-primary-bg;
+          border-color: $btn-primary-border;
+    }
+}
+
+.btn-success.btn-outline {
+    color: $btn-success-bg;
+    &:hover {
+      background-color: $btn-success-bg;
+          border-color: $btn-success-border;
+    }
+}
+
+.btn-info.btn-outline {
+    color: $btn-info-bg;
+    &:hover {
+      background-color: $btn-info-bg;
+          border-color: $btn-info-border;
+    }
+}
+
+.btn-warning.btn-outline {
+    color: $btn-warning-bg;
+    &:hover {
+      background-color: $btn-warning-bg;
+          border-color: $btn-warning-border;
+    }
+}
+
+.btn-danger.btn-outline {
+    color: $btn-danger-bg;
+    &:hover {
+      background-color: $btn-danger-bg;
+          border-color: $btn-danger-border;
+    }
+}
+
+.btn-gray-kyn-light.btn-outline {
+    color: $gray-kyn-light;
+    &:hover {
+      background-color: $gray-kyn;
+          border-color: $gray-kyn;
+    }
+}
+
+
+
+.btn-primary.btn-outline:hover,
+.btn-success.btn-outline:hover,
+.btn-info.btn-outline:hover,
+.btn-warning.btn-outline:hover,
+.btn-danger.btn-outline:hover {
+    color: #fff;
+}
+
+// Button outline style on inverse background
+.btn-outline-inverse {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+    }
+}
+.btn-primary.btn-outline-inverse:hover {
+    color: $brand-primary;
+}
+
+.btn-success.btn-outline-inverse:hover {
+    color: $brand-success;
+}
+
+.btn-info.btn-outline-inverse:hover {
+    color: $brand-info;
+}
+
+.btn-warning.btn-outline-inverse:hover {
+    color: $brand-warning;
+}
+
+.btn-danger.btn-outline-inverse:hover {
+    color: $brand-danger;
+}
+
+// ----- Indicators -----
+.indicator:after, .indicator-placeholder:after {
+  display: inline !important;
+  //padding-left: 1px;
+  font-size: 50%;
+  line-height: 1em;
+  font-weight: bold;
+  color: #f15755;
+  font-family: 'FontAwesome';
+  content: '\f111';
+  //content: '●';
+}
+.indicator-placeholder:after {
+  visibility: hidden;
+}
+a.indicator-placeholder:hover:after {
+  text-decoration: none !important;
+}
+.indicator-name-cards {
+  //font-family:'Helvetica Neue';
+  line-height:15px;
+  font-size:12px;
+  &.indicator-name-cards-staff {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+.indicator-name {
+  &.indicator-name-cards {
+    color: $text-color;
+  }
+  &.indicator-name-curated {
+    color: $text-color;
+  }
+  &.indicator-name-dark-bg {
+    color: $white !important;
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+      color: #ccc !important;
+    }
+  }
+  &:hover {
+    //color: $gray-light !important; //TODO: Uncomment when titles link to a profile
+    cursor: default;
+    text-decoration: none;
+  }
+}
+
+// ----- Follow -----
+.follow-default:before {
+  font-family: 'FontAwesome';
+  content: "\f055\ Follow";
+  opacity: 1.0;
+}
+
+.following:before {
+  content: 'Following'
+
+}
+
+.following:hover:before {
+  content: 'Unfollow';
+}
+
+.following {
+  opacity: 0.5;
+}
+
+.unfollow {
+  opacity: 1.0;
+}
+
+// ----- Follow All -----
+.follow-all-default:before {
+  font-family: 'FontAwesome';
+  content: "\f055\ Follow All";
+  opacity: 1.0;
+}
+
+.following-all:before {
+  content: 'Following All'
+
+}
+
+.following-all:hover:before {
+  content: 'Unfollow All';
+}
+
+.following-all {
+  opacity: 0.5;
+}
+
+.unfollow-all {
+  opacity: 1.0;
+}
+
+// ----- Contribute -----
+
+.btn-contribute, .btn-contribute:focus, .btn-contribute:active {
+  background-color: $gray-kyn;
+  color: white;
+  text-shadow: none;
+  &:hover {
+    background-color: darken($gray-kyn, 10%);
+    color: white;
+  }
+}
+.coinvest-default:after {
+  font-family: 'FontAwesome';
+  content: "\f0da";
+  opacity: 1.0;
+  margin-left: 7px;
+  color: white;
+}
+
+
+// ----- Co-Invest -----
+
+.btn-coinvest, .btn-coinvest:focus, .btn-coinvest:active {
+  background-color: $blue;
+  color: white !important;
+  text-shadow: none;
+  &:hover {
+    background-color: darken($blue, 10%);
+    color: white;
+  }
+}
+.coinvest-default:after {
+  font-family: 'FontAwesome';
+  content: "\f0da";
+  opacity: 1.0;
+  margin-left: 7px;
+  color: white;
+}
+
+// ----- Donate -----
+.btn-donate, .btn-donate:focus, .btn-donate:active {
+  background-color: #f15755;
+  color: white;
+  text-shadow: none;
+  &:hover {
+    background-color: #f2716d;
+    color: white;
+  }
+}
+/*
+.donate-default:before {
+  font-family: 'FontAwesome';
+  content: '\f055'; //fa-plus-circle
+  content: '\f067'; //fa-plus
+  content: '\f07a'; //fa-cart
+  content: '\f004'; //fa-heart
+  opacity: 1.0;
+  //margin-right: 7px;
+  color: white;
+}
+*/
+
+.donate-default:after {
+  font-family: 'FontAwesome';
+  content: "\f0da"; //caret
+  //content: '\f08e'; //external-link
+  //content: '\f023'; //lock
+  opacity: 1.0;
+  margin-left: 7px;
+  color: white;
+}
+
+// ----- Learn -----
+.btn-learn, .btn-learn:focus, .btn-learn:active {
+  background-color: #f0ad4e;
+  color: $text-color;
+  box-shadow: 0px 0px 10px black;
+  text-shadow: none;
+  &:hover {
+    background-color: darken(#f0ad4e, 10%);
+    color: $text-color;
+  }
+}
+
+.learn-default:after {
+  font-family: 'FontAwesome';
+  //content: "\f0da"; //caret
+  content: '\f08e'; //external-link
+  //content: '\f14c';
+  opacity: 1.0;
+  margin-left: 7px;
+  //color: white;
+}
+
+// ----- Watch -----
+.btn-watch {
+  text-shadow: none;
+}
+
+.watch-default:before {
+  font-family: 'FontAwesome';
+  //content: "\f055\ Watchlist";
+  //content: "\f067\ \f06e\ Watchlist";
+  content: "\f06e\ Watch";
+  opacity: 1.0;
+}
+.watch-default {
+  content: "\f06e\ Watchlist";
+}
+
+.watch-default-wide:before {
+    content: "\f055\ Add them to your Watchlist" !important;
+  }
+
+.watching:before {
+  content: 'Watching';
+}
+
+.watching:hover:before {
+  content: 'Remove';
+}
+
+.watching {
+  opacity: 0.5;
+}
+
+.remove {
+  opacity: 1.0;
+}

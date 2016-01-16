@@ -1,0 +1,66 @@
+//Note - most of the invite css is still nested under the Discover section in styles.scss
+
+#invites-wrapper {
+  .invite-welcome-bg {
+    background-image: url('#{$cloudfrontPath}/images/invite-welcome-bg.jpg');
+    background-size: cover;
+    background-position: right;
+    min-height: 600px;
+    color: white;
+    padding: 100px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    p, h2 {
+      font-family: "Lato";
+      background-color: rgba(0,0,0,.5);
+      padding: 10px;
+      font-weight: 100;
+      border-radius: 5px;
+    }
+  }
+  .platform-bg, .well-invites-bg {
+    background-image: url('#{$cloudfrontPath}/images/3px-tile.png');
+    //background-color: rgba(255,0,0,0.5);
+  }
+  ul.platform-bg li h3 {
+    margin: 20px 0;
+  }
+  .invite-badge {
+    background-color: $gray-kyn;
+    color: white;
+    padding: 5px 20px 5px 10px;
+    &.invite-badge-well {
+      position: absolute;
+      top: 21px;
+      left: 15px;
+    }
+  }
+  ul#kyn-platform {
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+    li {
+      width: 24%;
+      h3 .logo-align-h3 {
+        vertical-align: baseline;
+      }
+    }
+  }
+  @media (max-width: $screen-xs-min) {
+    .discover-welcome-outro {
+      padding: 10px;
+    }
+    ul#kyn-platform {
+      li {
+        display: inline;
+      }
+    }
+    .invite-welcome-bg {
+      padding: 10px;
+      p, h2 {
+
+      }
+    }
+  }
+}

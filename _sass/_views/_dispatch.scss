@@ -1,0 +1,341 @@
+//Note: Much of Dispatch css is found in opportunities.scss
+
+//Filter bar
+.img-spark {
+  height: 30px;
+  width: 40px;
+  padding-right: 10px;
+  margin-right: 10px;
+  border-right: 1px solid #eee;
+}
+.btn-spark-text {
+  padding-left: 7px;
+  border-left: 1px solid #eee;
+}
+
+.btn-border-only:hover {
+  .btn-spark-text {
+    border-left: 1px solid $gray-kyn-light;
+  }
+}
+//End filter bar
+
+.coinvest-partner-badge {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  color: white;
+  background-color: $gray-kyn-light;
+  padding: 3px 5px;
+  border-radius: 3px;
+  cursor: default;
+}
+
+#coinvest-modal {
+  .option-header {
+    //color: $gray-kyn;
+  }
+  dt {
+    margin-top: 10px;
+  }
+  dd {
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+}
+
+//
+//Dispatch Lenses
+//
+.dispatch-lenses{
+  padding-top: 75px;
+  @media (max-width: $screen-sm-max) {
+    .modal-content {
+      margin-bottom: 100px;
+    }
+  }
+  .modal-header {
+    //position: absolute;
+    padding: 15px 15px 10px 15px;
+    display: block;
+    margin: 1px 1px 0 1px;
+    min-height: 47px;
+    background: #f0f0f2;
+    background-image: -webkit-linear-gradient(#f5f5f7,#e9e9ea);
+    background-image: -moz-linear-gradient(#f5f5f7,#e9e9ea);
+    background-image: -ms-linear-gradient(#f5f5f7,#e9e9ea);
+    background-image: -o-linear-gradient(#f5f5f7,#e9e9ea);
+    background-image: linear-gradient(#f5f5f7,#e9e9ea);
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #d3d3d4;
+    -webkit-border-radius: 7px 7px 0 0;
+    -moz-border-radius: 7px 7px 0 0;
+    -ms-border-radius: 7px 7px 0 0;
+    -o-border-radius: 7px 7px 0 0;
+    border-radius: 7px 7px 0 0;
+    -webkit-box-shadow: 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 #fff;
+    -ms-box-shadow: 0 1px 0 #fff;
+    -o-box-shadow: 0 1px 0 #fff;
+    box-shadow: 0 1px 0 #fff;
+    cursor: default;
+  }
+  .modal-body {
+    min-height: 225px;
+  }
+  .image {
+    width: 76px;
+    height: 75px;
+    position: absolute;
+    left: 50%;
+    margin-left: -38px;
+    top: -30px;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background: url("https://a.stripecdn.com/checkout/v3/images/icon-border-Uz9anqiDNVCgXMysAAWGQ.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    img {
+      background: #fff;
+      width: 64px;
+      height: 64px;
+      display: block;
+      -webkit-border-radius: 32px;
+      -moz-border-radius: 32px;
+      -ms-border-radius: 32px;
+      -o-border-radius: 32px;
+      border-radius: 32px;
+      margin: 4px 6px 0;
+    }
+  }
+  .modal-title {
+    //padding: 0 35px 13px 35px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    h1, h2 {
+      text-shadow: 0 1px 0 #fff;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      line-height: 1.1em;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      color: #000;
+      font-size: 17px;
+      font-weight: bold;
+      height: 22px;
+      //padding-top: 53px;
+      margin-top: 40px;
+    }
+    h2 {
+      color: #5b5b65;
+      font-size: 13px;
+      font-family: "HelveticaNeueMedium","HelveticaNeue-Medium","Helvetica Neue Medium","HelveticaNeue","Helvetica Neue",Helvetica,Arial;
+      font-weight: normal;
+      padding-bottom: 5px;
+    }
+  }
+  .grantee-name {
+    //color: #bbb;
+    //color: $gray-kyn-light;
+    font-weight: bold;
+    font-size: 85%;
+    line-height: 1.3em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .bio-link {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-size: .9em;
+    a {
+      color: $gray-kyn-light;
+    }
+  }
+}
+
+
+
+//
+//Sidebar
+//
+#sidebar-container {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sidebar-container.toggled {
+    padding-left: 250px;
+}
+
+#sidebar-wrapper {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+$sidebar-width: 250px;
+
+#sidebar-container.toggled #sidebar-wrapper {
+    width: $sidebar-width;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    //padding: 15px;
+}
+
+#sidebar-container.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -$sidebar-width;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: $sidebar-width;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 20px;
+    line-height: 40px;
+}
+
+.sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: #999999;
+}
+
+.sidebar-nav li a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+    height: 65px;
+    font-size: 18px;
+    line-height: 60px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+    color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+    color: #fff;
+    background: none;
+}
+
+@media(min-width:768px) {
+    #sidebar-container {
+        padding-left: $sidebar-width;
+    }
+
+    #sidebar-container.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: $sidebar-width;
+    }
+
+    #sidebar-container.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        //padding: 20px;
+        position: relative;
+    }
+
+    #sidebar-container.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+//
+//Welcome page (old)
+//
+#dispatch-label {
+  background-color: white;
+}
+#page-content-wrapper {
+  .dispatch-welcome-box-container {
+    margin: 0 10px;
+  }
+  .dispatch-welcome-bg {
+    background-image: url('#{$cloudfrontPath}/images/invite-welcome-bg.jpg');
+    background-size: cover;
+    background-position: right;
+    min-height: 600px;
+    color: white;
+    padding: 100px;
+    border-radius: 5px;
+    margin-bottom: 60px;
+    margin-top: 20px;
+    p, h2 {
+      font-family: "Lato";
+      background-color: rgba(0,0,0,.5);
+      padding: 10px;
+      font-weight: 100;
+      border-radius: 5px;
+    }
+  }
+  .discover-welcome-box span {
+    position: absolute;
+    top: -15px;
+    left: 5px;
+    }
+  .dispatch-welcome-box-body {
+    padding: 0 10px;
+  }
+  .input-group-btn-padding {
+    padding:0 20px;
+  }
+  .convince-me {
+    margin-top: 5px;
+  }
+  .well-dispatch-subscribe-success {
+    box-shadow: 0px -10px 0px $green;
+    margin-top:50px;
+  }
+  .media-body-discover-welcome {
+    color: $gray-kyn-light;
+  }
+}
