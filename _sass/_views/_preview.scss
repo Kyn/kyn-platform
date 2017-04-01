@@ -30,12 +30,12 @@
   #preview-jumbotron {
     height: 600px;
     margin-bottom: 2px;
-    background: url("//d2zrr75qo845hh.cloudfront.net/images/curated-youth-eyes.jpg") no-repeat;
-    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url("//d2zrr75qo845hh.cloudfront.net/images/curated-youth-eyes.jpg") no-repeat center center fixed;
-    background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(25%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(0, 0, 0, 0.1))), url("//d2zrr75qo845hh.cloudfront.net/images/curated-youth-eyes.jpg") no-repeat center center fixed;
-    background: -moz-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("//d2zrr75qo845hh.cloudfront.net/images/curated-youth-eyes.jpg") no-repeat center center fixed;
-    background: -webkit-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("//d2zrr75qo845hh.cloudfront.net/images/curated-youth-eyes.jpg") no-repeat center center fixed;
-    background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("//d2zrr75qo845hh.cloudfront.net/images/curated-youth-eyes.jpg") no-repeat center center fixed;
+    background: url("../images/curated-youth-eyes.jpg") no-repeat;
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url("../images/curated-youth-eyes.jpg") no-repeat center center fixed;
+    background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #000000), color-stop(25%, rgba(0, 0, 0, 0.7)), color-stop(100%, rgba(0, 0, 0, 0.1))), url("../images/curated-youth-eyes.jpg") no-repeat center center fixed;
+    background: -moz-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("../images/curated-youth-eyes.jpg") no-repeat center center fixed;
+    background: -webkit-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("../images/curated-youth-eyes.jpg") no-repeat center center fixed;
+    background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0.7) 25%, rgba(0, 0, 0, 0.1) 100%), url("../images/curated-youth-eyes.jpg") no-repeat center center fixed;
     background-size: cover, cover;
     @media (max-width: $screen-sm-max) {
       background-attachment: scroll;

@@ -11,7 +11,9 @@
 /// Define Global Sass Variables & Mixins
 ///
 $s3Path : "//s3.amazonaws.com/kyn-production";
-$cloudfrontPath : "//d2zrr75qo845hh.cloudfront.net";
+//$cloudfrontPath : "//d2zrr75qo845hh.cloudfront.net";
+$s3Path : "{{ site.baseurl }}";
+$cloudfrontPath : "{{ site.baseurl }}";
 
 @mixin kyn-box-shadow {
   box-shadow: 0px 0px 10px #888;
